@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form>
+                <div class="form-group pt-4">
+                    <label for="x1">Valor X1:</label>
+                    <input [(ngModel)]="x1" name="x1" type="text" class="form-control" id="x1" placeholder="Ingrese X1">
+                </div>
+                <div class="form-group pt-4">
+                    <label for="y1">Valor Y1:</label>
+                    <input [(ngModel)]="y1" name="y1" type="text" class="form-control" id="y1" placeholder="Ingrese Y1">
+                </div>
+
+                <div class="form-group pt-4">
+                    <label for="x2">Valor X2:</label>
+                    <input [(ngModel)]="x2" name="x2" type="text" class="form-control" id="x2" placeholder="Ingrese X2">
+                </div>
+                <div class="form-group pt-4">
+                    <label for="y2">Valor Y2:</label>
+                    <input [(ngModel)]="y2" name="y2" type="text" class="form-control" id="y2" placeholder="Ingrese Y2">
+                </div>
+
+                <br>
+                <button (click)="calcularDistancia()" type="button" class="btn btn-primary">
+                    Calcular Distancia
+                </button>
+            </form>
+        </div>
+        <div class="col-6 pt-4">
+            <h2>Resultado: {{resultado}}</h2>
+        </div>
+    </div>
+</div>

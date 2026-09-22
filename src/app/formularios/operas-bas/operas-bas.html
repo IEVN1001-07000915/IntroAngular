@@ -1,0 +1,76 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <form>
+                <div class="form-group pt-4">
+                <label for="num1">Número 1:</label>
+                <input [(ngModel)]="num1" name="num1" type="number" class="form-control" id="num1" placeholder="Ingrese número 1">
+                </div>
+                <div class="form-group pt-4">
+                <label for="num2">Número 2:</label>
+                <input [(ngModel)]="num2" name="num2" type="number" class="form-control" id="num2" placeholder="Ingrese número 2">
+                </div>
+                <br>
+                <!--<button (click)="sumar()" type="button" class="btn btn-primary">
+                    Sumar
+                </button>
+                <br>
+                <br>
+                <button (click)="restar()" type="button" class="btn btn-primary">
+                    Restar
+                </button>
+                <br>
+                <br>
+                <button (click)="multiplicar()" type="button" class="btn btn-primary">
+                    Multiplicar
+                </button>
+                <br>
+                <br>
+                <button (click)="dividir()" type="button" class="btn btn-primary">
+                    Dividir
+                </button>-->
+                <div class="mb-3">
+                    <label class="form-label">Seleccione una operación:</label>
+                    
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="operacion" id="sumar" value="sumar" [(ngModel)]="operacionSeleccionada">
+                        <label class="form-check-label" for="sumar">Sumar</label>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="operacion" id="restar" value="restar" [(ngModel)]="operacionSeleccionada">
+                        <label class="form-check-label" for="restar">Restar</label>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="operacion" id="multiplicar" value="multiplicar" [(ngModel)]="operacionSeleccionada">
+                        <label class="form-check-label" for="multiplicar">Multiplicar</label>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="operacion" id="dividir" value="dividir" [(ngModel)]="operacionSeleccionada">
+                        <label class="form-check-label" for="dividir">Dividir</label>
+                    </div>
+                </div>
+
+                <!-- Botón de calcular conectado a TypeScript -->
+                <button type="button" class="btn btn-primary mt-2" (click)="calcular()">Calcular</button>
+            </form>
+        </div>
+        
+        <div class="col-6 pt-4">
+            <h2>Resultado: {{resultado}}</h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>l
