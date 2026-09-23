@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form>
+                <div class="mb-4 pt-4">
+                    <label for="IngresalaFrase">Ingresa la Frase:</label>
+                    <input [(ngModel)]="IngresalaFrase" name="IngresalaFrase" type="text" class="form-control" id="IngresalaFrase" placeholder="Ingrese la Frase">
+                </div>
+
+                <br>
+                <button (click)="Validar()" type="button" class="btn btn-primary">
+                    Validar
+                </button>
+            </form>
+        </div>
+        <div class="col-6 pt-4">
+            <h2>Mensaje: {{mensaje}}</h2>
+        </div>
+    </div>
+</div>

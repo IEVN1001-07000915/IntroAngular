@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form>
+                <div class="mb-4 pt-4">
+                    <label class="form-label"><b>Seleccione una figura:</b></label>
+                    
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="figura" id="cuadrado" value="cuadrado" [(ngModel)]="figuraSeleccionada">
+                        <label class="form-check-label" for="cuadrado">Cuadrado</label>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="figura" id="rectangulo" value="rectangulo" [(ngModel)]="figuraSeleccionada">
+                        <label class="form-check-label" for="rectangulo">Rectángulo</label>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="figura" id="circulo" value="circulo" [(ngModel)]="figuraSeleccionada">
+                        <label class="form-check-label" for="circulo">Círculo</label>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="figura" id="pentagono" value="pentagono" [(ngModel)]="figuraSeleccionada">
+                        <label class="form-check-label" for="pentagono">Pentágono Regular</label>
+                    </div>
+                </div>
+
+                <div class="form-group pt-2" *ngIf="figuraSeleccionada !== 'rectangulo'">
+                    <label for="param1">{{ etiquetaParam1 }}</label>
+                    <input [(ngModel)]="param1" name="param1" type="number" class="form-control" id="param1" placeholder="Ingrese valor">
+                </div>
+
+                <div *ngIf="figuraSeleccionada === 'rectangulo'">
+                    <div class="form-group pt-2">
+                        <label for="base">Base:</label>
+                        <input [(ngModel)]="base" name="base" type="number" class="form-control" id="base" placeholder="Ingrese base">
+                    </div>
+                    <div class="form-group pt-2">
+                        <label for="altura">Altura:</label>
+                        <input [(ngModel)]="altura" name="altura" type="number" class="form-control" id="altura" placeholder="Ingrese altura">
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-primary mt-3" (click)="calcularArea()">Calcular Área</button>
+            </form>
+        </div>
+        
+        <div class="col-6 pt-4">
+            <div class="card p-3 bg-light">
+                <h3>Resultados:</h3>
+                <p><b>Área:</b> {{ resultadoArea | number:'1.2-2' }}</p>
+            </div>
+        </div>
+    </div>
+</div>
