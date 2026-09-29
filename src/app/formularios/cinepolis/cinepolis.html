@@ -1,0 +1,66 @@
+<div style="background-image: url('cinepolis-logo.png'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 100vh; padding: 40px 20px; box-sizing: border-box;">
+
+    <!-- Contenedor principal transparente -->
+    <div style="font-family: Arial, sans-serif; max-width: 800px; margin: auto; background: transparent; padding: 30px;">
+
+        <!-- Título -->
+        <div style="text-align: center; margin-bottom: 25px;">
+            <h2 style="color: #ffffff; margin: 0; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Cinepolis - LA CAPITAL DEL CINE</h2>
+        </div>
+
+        <!-- Contenedor general en dos columnas -->
+        <div style="display: flex; gap: 30px; justify-content: space-between; flex-wrap: wrap;">
+
+            <!-- Entradas (Izquierda) - Fondo transparente -->
+            <fieldset style="flex: 1; min-width: 300px; border: 2px solid #ffffff; padding: 20px; border-radius: 8px; background-color: transparent;">
+                <legend style="font-style: italic; font-weight: bold; color: #ffffff; padding: 0 10px; background-color: rgba(0,0,0,0.5); border-radius: 4px; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Entradas</legend>
+                
+                <label style="color: #ffffff; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Nombre:</label><br>
+                <input type="text" [(ngModel)]="nombre" style="width: 100%; padding: 5px; margin-bottom: 15px; background: rgba(255,255,255,0.8); border: 1px solid #ccc;"><br>
+
+                <label style="color: #ffffff; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Cantidad Compradores:</label><br>
+                <input type="text" [(ngModel)]="cantidadCompradoresTexto" style="width: 100%; padding: 5px; margin-bottom: 15px; background: rgba(255,255,255,0.8); border: 1px solid #ccc;"><br>
+
+                <label style="color: #ffffff; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">¿Tiene Tarjeta Cineco?:</label><br>
+                <div style="margin: 8px 0 15px 0; color: #ffffff; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
+                    <input type="radio" name="cineco" value="si" [(ngModel)]="tieneTarjeta"> Sí &nbsp;&nbsp;
+                    <input type="radio" name="cineco" value="no" [(ngModel)]="tieneTarjeta"> No
+                </div>
+
+                <label style="color: #ffffff; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Cantidad de boletas (máx. 7):</label><br>
+                <input type="text" [(ngModel)]="cantidadTexto" style="width: 100%; padding: 5px; background: rgba(255,255,255,0.8); border: 1px solid #ccc;">
+            </fieldset>
+
+            <!-- Salidas y Acciones (Derecha) -->
+            <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 20px;">
+                
+                <!-- Salidas - Fondo transparente -->
+                <fieldset style="border: 2px solid #ffffff; padding: 20px; border-radius: 8px; background-color: transparent;">
+                    <legend style="font-style: italic; font-weight: bold; color: #ffffff; padding: 0 10px; background-color: rgba(0,0,0,0.5); border-radius: 4px; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Salidas</legend>
+                    
+                    <label style="color: #ffffff; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Valor a Pagar: </label><br>
+                    <input type="text" [value]="resultadoTotal" readonly style="width: 100%; padding: 5px; background-color: rgba(255,255,255,0.8); border: 1px solid #ccc;">
+                </fieldset>
+
+                <!-- Acciones - Fondo transparente -->
+                <fieldset style="border: 2px solid #ffffff; padding: 20px; border-radius: 8px; text-align: center; background-color: transparent;">
+                    <legend style="font-style: italic; font-weight: bold; color: #ffffff; padding: 0 10px; background-color: rgba(0,0,0,0.5); border-radius: 4px; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">Acciones</legend>
+                    
+                    <div style="display: flex; justify-content: center; gap: 10px;">
+                        <button (click)="Procesar()" style="padding: 8px 20px; font-weight: bold; cursor: pointer; background: #f1f1f1; border: 1px solid #333; border-radius: 4px;">Procesar</button>
+                        <button (click)="Salir()" style="padding: 8px 20px; font-weight: bold; cursor: pointer; background: #f1f1f1; border: 1px solid #333; border-radius: 4px;">Salir</button>
+                    </div>
+                </fieldset>
+
+            </div>
+
+        </div>
+
+        <!-- Mensaje de Alerta -->
+        <div *ngIf="mensaje" style="margin-top: 20px; text-align: center;">
+            <p style="color: #ffcccc; font-weight: bold; background-color: rgba(0,0,0,0.7); display: inline-block; padding: 8px 15px; border-radius: 5px;">{{ mensaje }}</p>
+        </div>
+
+    </div>
+
+</div>
